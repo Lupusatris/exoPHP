@@ -18,7 +18,7 @@
     <?php
         // Code
         function calcul($prix,$nombre,$tva){
-            return $prix*$nombre*$tva;
+            return $prix*$nombre*($tva+1);
         }
         echo "prixArticle=$prixArticle $saut nbrArticle=$nbrArticle $saut tva=$tva $saut $saut total=$total $saut";
     ?>
