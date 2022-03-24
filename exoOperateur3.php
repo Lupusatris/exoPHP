@@ -12,15 +12,19 @@
         $saut="<br>";
         // [$a, $b] = array(15, 23);
         [$a, $b] = [15, 23];
-        [$t, $o] = [5, 2];
         $c=$a+$b;
     ?>
     <?php
         // Code
         echo "a=$a $saut b=$b $saut $saut";
-        echo "t=$t $saut o=$o $saut $saut";
         [$a, $b] = [$b, $a];
         echo "a=$a $saut b=$b $saut";
     ?>
+    <!-- git config --global user.email claudeblandin@yahoo.fr 
+git config --global user.name Lupusatris
+git add *
+git commit -m "ajout fichier"
+git push https://github.com/Lupusatris/exoPHP master
+-->
 </body>
 </html>

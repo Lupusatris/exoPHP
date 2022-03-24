@@ -20,5 +20,11 @@
     // Script PHP
     echo "Hello World";
     ?>
+    <!-- git config --global user.email claudeblandin@yahoo.fr 
+git config --global user.name Lupusatris
+git add *
+git commit -m "ajout fichier"
+git push https://github.com/Lupusatris/exoPHP master
+-->
 </body>
 </html>
