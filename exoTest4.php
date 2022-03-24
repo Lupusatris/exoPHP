@@ -10,29 +10,26 @@
     <?php
         // Variable
         $saut="<br>";
-        $a=1;
-        $b=2;
-        $c=3
     ?>
     <?php
         // Code
-        function plusGrand($nbr1,$nbr2,$nbr3){
-            if ($nbr1>$nbr2 && $nbr1>$nbr3){
-                return $nbr1;
-            }else if($nbr2>$nbr3){
-                return $nbr2;
+        function categorie($nbr){
+            if ($nbr>=12){
+                return '"Cadet" apres 12 ans';
+            }else if($nbr>=10){
+                return '"Minime" de 10 à 11 ans';
+            }else if($nbr>=8){
+                return '"Pupille" de 8 à 9 ans';
+            }else if($nbr>=6){
+                return '"Poussin" de 6 à 7 ans';
             }else{
-                return $nbr3;
+                return 'Trop jeune pour jouer';
             }
         }
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
-        [$a,$b,$c]=[$b,$c,$a];
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
-        [$a,$b,$c]=[$b,$c,$a];
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
+        for($a=13;$a>3;$a--){
+            $resultat=categorie($a);
+            echo "Age = $a, $resultat $saut";
+        }
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris

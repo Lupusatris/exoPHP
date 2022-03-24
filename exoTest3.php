@@ -16,23 +16,23 @@
     ?>
     <?php
         // Code
-        function plusGrand($nbr1,$nbr2,$nbr3){
-            if ($nbr1>$nbr2 && $nbr1>$nbr3){
+        function plusPetit($nbr1,$nbr2,$nbr3){
+            if ($nbr1<$nbr2 && $nbr1<$nbr3){
                 return $nbr1;
-            }else if($nbr2>$nbr3){
+            }else if($nbr2<$nbr3){
                 return $nbr2;
             }else{
                 return $nbr3;
             }
         }
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
+        $resultat=plusPetit($a,$b,$c);
+        echo "$resultat est le plus petit. $saut";
         [$a,$b,$c]=[$b,$c,$a];
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
+        $resultat=plusPetit($a,$b,$c);
+        echo "$resultat est le plus petit. $saut";
         [$a,$b,$c]=[$b,$c,$a];
-        $resultat=plusGrand($a,$b,$c);
-        echo "$resultat est le plus grand. $saut";
+        $resultat=plusPetit($a,$b,$c);
+        echo "$resultat est le plus petit. $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris
