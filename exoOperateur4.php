@@ -11,13 +11,16 @@
         // Variable
         $saut="<br>";
         $prixArticle=2.30;
-        $nbrArticle=5;
+        $nbrArticle=10;
         $tva=0.2;
-        $total=($prixArticle*$nbrArticle)*$tva;
+        $total=calcul($prixArticle,$nbrArticle,$tva);
     ?>
     <?php
         // Code
-        echo "prixArticle=$prixArticle $saut nbrArticle=$nbrArticle $saut tva=$tva $saut total=$total $saut";
+        function calcul($prix,$nombre,$tva){
+            return $prix*$nombre*$tva;
+        }
+        echo "prixArticle=$prixArticle $saut nbrArticle=$nbrArticle $saut tva=$tva $saut $saut total=$total $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris
