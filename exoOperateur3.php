@@ -16,9 +16,9 @@
     ?>
     <?php
         // Code
-        echo "a=$a $saut b=$b $saut $saut";
+        echo "a =$a $saut b = $b $saut $saut";
         [$a, $b] = [$b, $a];
-        echo "a=$a $saut b=$b $saut";
+        echo "a =$a $saut b = $b $saut $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris

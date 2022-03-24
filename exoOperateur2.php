@@ -16,10 +16,10 @@
     ?>
     <?php
         // Code
-        echo "a=$a $saut b=$b $saut c=$c $saut $saut";
+        echo "a = $a $saut b = $b $saut c = $c $saut $saut";
         $a=2;
         $c=$b-$a;
-        echo "a=$a $saut b=$b $saut c=$c $saut";
+        echo "a = $a $saut b = $b $saut c = $c $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris

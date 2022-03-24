@@ -17,7 +17,7 @@
     ?>
     <?php
         // Code
-        echo "total=$total $saut";
+        echo "total = $total $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris

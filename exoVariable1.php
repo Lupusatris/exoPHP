@@ -16,9 +16,9 @@
     ?>
     <?php
         // Code
-        echo "nbr=$nbr $saut";
+        echo "nbr = $nbr $saut";
         echo gettype($nbr),$saut;
-        echo "prenom=$prenom $saut";
+        echo "prenom = $prenom $saut";
         echo gettype($bool),$saut;
         echo 'mon prénom : '.$prenom.'<br>';
         echo "mon prénom : $prenom<br>";
