@@ -17,21 +17,13 @@
     <?php
         // Code
         for($i;$i<10;$i++){
-            if ($i==0){
-                $tab[$i]=1;
-            }else{
-                $tab[$i]=$tab[$i-1]+2;
-            }
+            $tab[$i]=$i+1;
             echo $tab[$i], "$saut";
         }
         echo "$saut";
         $i=0;
         while($i<10){
-            if ($i==0){
-                $tab1[$i]=1;
-            }else{
-                $tab1[$i]=$tab1[$i-1]+2;
-            }
+            $tab1[$i]=$i+1;
             echo $tab1[$i], "$saut";
             $i++;
         }
