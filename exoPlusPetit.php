@@ -27,7 +27,7 @@
             echo $tab[$i], "$saut";
         }
         $resultat=plusPetit($tab);
-        echo "$resultat $saut";
+        echo "$saut valeur min = $resultat $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris

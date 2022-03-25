@@ -27,7 +27,7 @@
             echo $tab[$i], "$saut";
         }
         $resultat=plusGrand($tab);
-        echo "$resultat $saut";
+        echo "$saut valeur max = $resultat $saut";
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
 git config --global user.name Lupusatris
