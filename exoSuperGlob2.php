@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="get">
+    <form action="" method="post">
         <p>saisir le prix de l'article :</p>
         <input type="text" name="prixArt">
         <p>saisir le nombre d'article :</p>
@@ -22,13 +22,16 @@
     ?>
     <?php
         // Code
-        if(isset($_GET['prixArt']) AND isset($_GET['nbArt']) AND isset($_GET['tva']) 
-        AND $_GET['prixArt'] != "" AND $_GET['nbArt'] != "" AND $_GET['tva']
-        AND is_numeric($_GET['prixArt']) AND is_numeric($_GET['nbArt']) AND is_numeric($_GET['tva'])){
-            $nbr1 = $_GET['prixArt'];
-            $nbr2 = $_GET['nbArt'];
-            $nbr3 = $_GET['tva'];
+        if(isset($_POST['prixArt']) AND isset($_POST['nbArt']) AND isset($_POST['tva']) 
+        AND $_POST['prixArt'] != "" AND $_POST['nbArt'] != "" AND $_POST['tva']
+        AND is_numeric($_POST['prixArt']) AND is_numeric($_POST['nbArt']) AND is_numeric($_POST['tva'])){
+            $nbr1 = $_POST['prixArt'];
+            $nbr2 = $_POST['nbArt'];
+            $nbr3 = $_POST['tva'];
             $resultat = $nbr1 * $nbr2 * ($nbr3/100+1);
+            echo "Le prix d'un article est égal à : $nbr1 $saut";
+            echo "Le nombre d'article est égal à : $nbr2 $saut";
+            echo "La taxe est égale à : $nbr3 $saut";
             echo "Le prix TTC est égal à : $resultat $saut";
         }
         else{
