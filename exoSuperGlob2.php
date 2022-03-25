@@ -8,10 +8,12 @@
 </head>
 <body>
     <form action="" method="get">
-        <p>saisir le premier nombre :</p>
-        <input type="text" name="Nombre1">
-        <p>saisir le deuxieme nombre :</p>
-        <input type="text" name="Nombre2">
+        <p>saisir le prix de l'article :</p>
+        <input type="text" name="prixArt">
+        <p>saisir le nombre d'article :</p>
+        <input type="text" name="nbArt">
+        <p>saisir la tva :</p>
+        <input type="text" name="tva">
         <button type="submit">Envoyer</button>
     </form>
     <?php
@@ -20,13 +22,14 @@
     ?>
     <?php
         // Code
-        if(isset($_GET['Nombre1']) AND isset($_GET['Nombre2']) 
-        AND $_GET['Nombre1'] != "" AND $_GET['Nombre2'] != ""
-        AND is_numeric($_GET['Nombre1']) AND is_numeric($_GET['Nombre2'])){
-            $nbr1 = $_GET['Nombre1'];
-            $nbr2 = $_GET['Nombre2'];
-            $resultat = $nbr1 + $nbr2;
-            echo "La somme de $nbr1 et $nbr2 est égale à : $resultat $saut";
+        if(isset($_GET['prixArt']) AND isset($_GET['nbArt']) AND isset($_GET['tva']) 
+        AND $_GET['prixArt'] != "" AND $_GET['nbArt'] != "" AND $_GET['tva']
+        AND is_numeric($_GET['prixArt']) AND is_numeric($_GET['nbArt']) AND is_numeric($_GET['tva'])){
+            $nbr1 = $_GET['prixArt'];
+            $nbr2 = $_GET['nbArt'];
+            $nbr3 = $_GET['tva'];
+            $resultat = $nbr1 * $nbr2 * ($nbr3/100+1);
+            echo "Le prix TTC est égal à : $resultat $saut";
         }
         else{
             echo "Veuillez remplir les champs du formulaire avec des chiffres";
