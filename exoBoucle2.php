@@ -11,10 +11,11 @@
         // Variable
         $saut="<br>";
         $i=45;
+        $nbr=$i+1;
     ?>
     <?php
         // Code
-        for($nbr=$i+1;$nbr<$i+11;$nbr++){
+        for($nbr;$nbr<$i+11;$nbr++){
             echo "$nbr $saut";
         }
         echo "$saut";
