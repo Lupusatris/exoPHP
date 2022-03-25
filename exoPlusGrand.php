@@ -15,7 +15,7 @@
     <?php
         // Code
         function plusGrand($tableau){
-            $max=-100000000000000000000000000000000;
+            $max=$tableau[0];
             for($i=0;$i<count($tableau);$i++){
                 if ($max<$tableau[$i]){
                     $max=$tableau[$i];

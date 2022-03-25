@@ -15,7 +15,7 @@
     <?php
         // Code
         function plusPetit($tableau){
-            $min=100000000000000000000000000000000;
+            $min=$tableau[0];
             for($i=0;$i<count($tableau);$i++){
                 if ($min>$tableau[$i]){
                     $min=$tableau[$i];
