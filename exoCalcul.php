@@ -28,6 +28,7 @@
             $nbr1 = $_POST['nbr1'];
             $nbr2 = $_POST['nbr2'];
             $op = $_POST['operateur'];
+            $resultat=["n'","pas défini"];
             switch ($_POST['operateur']) {
                 case '+':
                     $resultat=$nbr1+$nbr2;
@@ -41,12 +42,19 @@
                 case '/':
                     $resultat=$nbr1/$nbr2;
                     break;
+                case '**':
+                    $resultat=$nbr1**$nbr2;
+                    break;
                 default:
-                    echo "Vous n'avez pas mis un operateur valide";
+                    echo "Vous n'avez pas mis un operateur valide $saut";
                     break;
             }
-            $resultat=round($resultat,3);
-            echo "Le resultat de $nbr1 $op $nbr2 est $resultat $saut";
+            if (is_numeric($resultat)){
+                $resultat=round($resultat,3);
+                echo "Le resultat de $nbr1 $op $nbr2 est $resultat. $saut";
+            }else{
+                echo "Le resultat de $nbr1 $op $nbr2 $resultat[0]est $resultat[1]. $saut";
+            }
         }else{
             echo "Veuillez remplir les champs du formulaire avec des nombres et un opérateur $saut";
         }
