@@ -16,6 +16,11 @@
         <p><input type="submit" value="Ajouter"></p>
     </form>
     <?php
+        // Variable
+        $saut="<br>";
+    ?>
+    <?php
+        // Code
         //fichier de connexion à la BDD
         include 'connectBdd.php';
         //function requête SQL
@@ -25,11 +30,17 @@
             $nom = $_POST['nom_produit'];
             $content = $_POST['contenu_produit'];
             insertProduit($bdd,$nom, $content);
-            echo "$nom à été ajouté en BDD";
+            echo "$nom à été ajouté en BDD $saut";
         }
         else{
-            echo 'Veuillez remplir les champs du  formulaire';
+            echo "Veuillez remplir les champs du  formulaire $saut";
         }
     ?>
+    <!-- git config --global user.email claudeblandin@yahoo.fr 
+git config --global user.name Lupusatris
+git add *
+git commit -m "ajout fichier"
+git push https://github.com/Lupusatris/exoPHP master
+-->
 </body>
 </html>
