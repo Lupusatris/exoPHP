@@ -13,13 +13,13 @@
         <p>Saisir son genre :</p>
         <select name="genre" >
             <option value="1">
-                Autre
+                Femme
             </option>
             <option value="2">
                 Homme
             </option>
             <option value="3">
-                Femme
+                Autre
             </option>   
         </select>
         <p><input type="submit" value="Afficher"></p>
@@ -33,19 +33,19 @@
         if(isset($_POST['nom']) AND $_POST['nom'] != "" ){
             $nom = $_POST['nom'];
             echo "Votre nom est $nom $saut";
+            switch ($_POST['genre']){
+                case 1 :
+                        echo "Vous avez choisi Femme $saut";
+                        break;
+                case 2 :
+                        echo "Vous avez choisi Homme $saut";
+                        break;
+                case 3 :
+                        echo "Vous avez choisi Autre $saut";
+                        break;
+            }
         }else{
             echo "Veuillez remplir le champs du formulaire avec votre nom $saut";
-        }
-        switch ($_POST['genre']){
-            case 2 :
-                    echo "Vous avez choisi Homme $saut";
-                    break;
-            case 3 :
-                    echo "Vous avez choisi Femme $saut";
-                    break;
-            default :
-                    echo "Veuillez choisir un genre $saut";
-                    break;
         }
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
