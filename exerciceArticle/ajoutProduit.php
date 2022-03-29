@@ -16,24 +16,20 @@
         <p><input type="submit" value="Ajouter"></p>
     </form>
     <?php
-        // Variable
-        $saut="<br>";
-    ?>
-    <?php
-        // Code
         //fichier de connexion à la BDD
         include 'connectBdd.php';
         //function requête SQL
         include 'function.php';
+        //test si les champs existent et sont remplis
         if(isset($_POST['nom_produit'])AND isset($_POST['contenu_produit']) AND
         $_POST['nom_produit'] != "" AND $_POST['contenu_produit'] !=""){
             $nom = $_POST['nom_produit'];
             $content = $_POST['contenu_produit'];
             insertProduit($bdd,$nom, $content);
-            echo "$nom à été ajouté en BDD $saut";
+            echo "$nom à été ajouté en BDD";
         }
         else{
-            echo "Veuillez remplir les champs du  formulaire $saut";
+            echo 'Veuillez remplir les champs du  formulaire';
         }
     ?>
     <!-- git config --global user.email claudeblandin@yahoo.fr 
