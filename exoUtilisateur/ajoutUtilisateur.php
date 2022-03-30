@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>Ajouter un utilisateur :</h3>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <p>Saisir votre nom :</p>
         <input type="text" name="nom_utilisateur">
         <p>Saisir votre prénom :</p>
@@ -17,7 +17,7 @@
         <p>Saisir votre mot de passe :</p>
         <input type="text" name="mdp_utilisateur">
         <p>Saisir une image :</p>
-        <input type="text" name="img_utilisateur">
+        <input type="file" name="img_utilisateur">
         <p><input type="submit" value="Ajouter"></p>
     </form>
     <?php
@@ -29,13 +29,17 @@
         if(isset($_POST['nom_utilisateur']) AND $_POST['nom_utilisateur'] !="" AND 
         isset($_POST['prenom_utilisateur']) AND $_POST['prenom_utilisateur'] !="" AND  
         isset($_POST['mail_utilisateur']) AND $_POST['mail_utilisateur'] !="" AND  
-        isset($_POST['mdp_utilisateur']) AND $_POST['mdp_utilisateur'] !="" AND  
-        isset($_POST['img_utilisateur']) AND $_POST['img_utilisateur'] !=""){
+        isset($_POST['mdp_utilisateur']) AND $_POST['mdp_utilisateur'] !=""){
             $nomUtil = $_POST['nom_utilisateur'];
             $prenomUtil = $_POST['prenom_utilisateur'];
             $mailUtil = $_POST['mail_utilisateur'];
             $mdpUtil = $_POST['mdp_utilisateur'];
-            $imgUtil = $_POST['img_utilisateur'];
+            if (isset($_FILES['img_utilisateur']) AND $_FILES['img_utilisateur'] !=""){
+                $nomTemp = $_FILES['img_utilisateur']['tmp_name'];
+                $nameFile = $_FILES['img_utilisateur']['name'];
+                $imgUtil = "./images/$nameFile";
+                move_uploaded_file($tmpName,$imgUtil);
+            }
             insertUtilisateur($bdd,$nomUtil, $prenomUtil, $mailUtil, $mdpUtil, $imgUtil);
             echo "$nomUtil à été ajouté en BDD";
         }else{

@@ -1,6 +1,6 @@
 <?php
     //requête ajouter un utilisateur :
-    function insertUtilisateur($bdd,$nom,$prenom,$mail,$mdp,$img){
+    function insertUtilisateur($bdd,$nom,$prenom,$mail,$mdp,$img="./images/default.png"){
         try{
             $req = $bdd->prepare('INSERT INTO utilisateur(nom_utilisateur,prenom_utilisateur,mail_utilisateur,mdp_utilisateur,img_utilisateur)
             VALUES(:nomUtil, :prenomUtil, :mailUtil, :mdpUtil, :imgUtil)');
@@ -52,7 +52,7 @@
         }
     }
     //requête qui met à jour un utilisateur (table->utilisateur)
-    function updateUtilisateur($bdd,$nom,$prenom,$mail,$mdp,$img,$value){
+    function updateUtilisateur($bdd,$nom,$prenom,$mail,$mdp,$img="./images/default.png",$value){
         try{
             $req = $bdd->prepare('UPDATE utilisateur SET nom_utilisateur = :nom_utilisateur,
             prenom_utilisateur = :prenom_utilisateur, mail_utilisateur = :mail_utilisateur,
